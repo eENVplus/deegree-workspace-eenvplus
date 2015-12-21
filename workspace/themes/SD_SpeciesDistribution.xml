@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Themes xmlns="http://www.deegree.org/themes/standard" xmlns:d="http://www.deegree.org/metadata/description" xmlns:s="http://www.deegree.org/metadata/spatial" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.2.0" xsi:schemaLocation="http://www.deegree.org/themes/standard http://schemas.deegree.org/themes/3.2.0/themes.xsd">
+	<LayerStoreId>SD_SpeciesDistribution</LayerStoreId>
+	<Theme>
+		<Identifier>SD.SpeciesDistribution</Identifier>
+		<d:Title>Species Distribution</d:Title>
+		<Layer>SD.SpeciesDistribution</Layer>
+	</Theme>
+</Themes>

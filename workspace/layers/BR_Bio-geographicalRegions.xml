@@ -1,0 +1,21 @@
+<FeatureLayers xmlns="http://www.deegree.org/layers/feature" xmlns:l="http://www.deegree.org/layers/base" xmlns:d="http://www.deegree.org/metadata/description" xmlns:s="http://www.deegree.org/metadata/spatial" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.deegree.org/layers/feature http://schemas.deegree.org/layers/feature/3.2.0/feature.xsd" configVersion="3.2.0">
+	<FeatureStoreId>inspire_br</FeatureStoreId>
+	<FeatureLayer>
+		<l:Name>BR.Bio-geographicalRegion</l:Name>
+		<d:Title>Bio-geographical Regions</d:Title>
+		<d:Abstract>WMS Bio-geographical Regions layer</d:Abstract>
+		<d:Keywords>
+			<d:Keyword>Bio-geographical regions</d:Keyword>
+			<d:Keyword>ecological regions</d:Keyword>
+		</d:Keywords>
+		<s:CRS>EPSG:3035 EPSG:4258 EPSG:4326 CRS:84</s:CRS>
+		<l:StyleRef>
+			<l:StyleStoreId>BR_Bio-geographicalRegions_Default</l:StyleStoreId>
+			<l:Style>
+				<l:StyleName>BR.BiogeographicalRegions.Default</l:StyleName>
+				<l:LayerNameRef>BR.BiogeographicalRegions</l:LayerNameRef>
+				<l:StyleNameRef>BR.BiogeographicalRegions.Default</l:StyleNameRef>
+			</l:Style>
+		</l:StyleRef>
+	</FeatureLayer>
+</FeatureLayers>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FeatureLayers xmlns="http://www.deegree.org/layers/feature" xmlns:l="http://www.deegree.org/layers/base" xmlns:d="http://www.deegree.org/metadata/description" xmlns:s="http://www.deegree.org/metadata/spatial" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.deegree.org/layers/feature http://schemas.deegree.org/layers/feature/3.2.0/feature.xsd" configVersion="3.2.0">
+	<FeatureStoreId>inspire_hy</FeatureStoreId>
+	<FeatureLayer>
+		<l:Name>HY.PhysicalWaters.Waterbodies</l:Name>
+		<d:Title>Waterbody</d:Title>
+		<d:Keywords>
+			<d:Keyword>Watercourse</d:Keyword>
+			<d:Keyword>River</d:Keyword>
+			<d:Keyword>Stream</d:Keyword>
+			<d:Keyword>Lake</d:Keyword>
+			<d:Keyword>Reservoir</d:Keyword>
+		</d:Keywords>
+		<s:CRS>EPSG:3035 EPSG:4258 EPSG:4326 CRS:84</s:CRS>
+		<l:StyleRef>
+			<l:StyleStoreId>HY_PhysicalWaters_Waterbodies_Default</l:StyleStoreId>
+			<l:Style>
+				<l:StyleName>HY.PhysicalWaters.Waterbodies.Default</l:StyleName>
+				<l:LayerNameRef>HY.PhysicalWaters.Waterbodies</l:LayerNameRef>
+				<l:StyleNameRef>HY.PhysicalWaters.Waterbodies.Default</l:StyleNameRef>
+			</l:Style>
+		</l:StyleRef>
+	</FeatureLayer>
+</FeatureLayers>

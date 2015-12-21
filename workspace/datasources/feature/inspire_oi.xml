@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SQLFeatureStore xmlns="http://www.deegree.org/datasource/feature/sql" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:oi="http://inspire.ec.europa.eu/schemas/oi/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3" xmlns:xlink="http://www.w3.org/1999/xlink" configVersion="3.1.0" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd">
+	<JDBCConnId>deegree_inspire_oi</JDBCConnId>
+	<StorageCRS srid="0" dim="2D">EPSG:4326</StorageCRS>
+	<GMLSchema>../../appschemas/inspire/oi/4.0/Orthoimagery.xsd</GMLSchema>
+	<FeatureTypeMapping name="oi:AggregatedMosaicElement" table="oi_aggregatedmosaicelement">
+		<FIDMapping prefix="OI_AGGREGATEDMOSAICELEMENT_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="oi:inspireId">
+			<Complex path="base:Identifier">
+				<Primitive path="base:localId" mapping="oi_inspireid_base_identifier_base_localid"/>
+				<Primitive path="base:namespace" mapping="oi_inspireid_base_identifier_base_namespace"/>
+				<Complex path="base:versionId">
+					<Primitive path="text()" mapping="oi_inspireid_base_identifier_base_versionid"/>
+					<Primitive path="@nilReason" mapping="oi_inspireid_base_identifier_base_versionid_attr_nilreason"/>
+					<Primitive path="@xsi:nil" mapping="oi_inspireid_base_identifier_base_versionid_attr_xsi_nil"/>
+				</Complex>
+			</Complex>
+		</Complex>
+		<Complex path="oi:geometry">
+			<Primitive path="@nilReason" mapping="oi_geometry_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="oi_geometry_attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="oi_geometry_attr_owns"/>
+			<Geometry path="." mapping="oi_geometry_value"/>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="oi:OrthoimageCoverage" table="oi_orthoimagecoverage">
+		<FIDMapping prefix="OI_ORTHOIMAGECOVERAGE_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="gmlcov:metadata">
+			<Join table="oi_orthoimagecoverage_gmlcov_metadata" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Primitive path="@xlink:type" mapping="attr_xlink_type"/>
+			<Primitive path="@xlink:href" mapping="attr_xlink_href"/>
+			<Primitive path="@xlink:role" mapping="attr_xlink_role"/>
+			<Primitive path="@xlink:arcrole" mapping="attr_xlink_arcrole"/>
+			<Primitive path="@xlink:title" mapping="attr_xlink_title"/>
+			<Primitive path="@xlink:show" mapping="attr_xlink_show"/>
+			<Primitive path="@xlink:actuate" mapping="attr_xlink_actuate"/>
+			<Primitive path="@nilReason" mapping="attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="attr_owns"/>
+			<Complex path="gmlcov:Extension"/>
+		</Complex>
+		<Complex path="oi:inspireId">
+			<Complex path="base:Identifier">
+				<Primitive path="base:localId" mapping="oi_inspireid_base_identifier_base_localid"/>
+				<Primitive path="base:namespace" mapping="oi_inspireid_base_identifier_base_namespace"/>
+				<Complex path="base:versionId">
+					<Primitive path="text()" mapping="oi_inspireid_base_identifier_base_versionid"/>
+					<Primitive path="@nilReason" mapping="oi_inspireid_base_identifier_base_versionid_attr_nilreason"/>
+					<Primitive path="@xsi:nil" mapping="oi_inspireid_base_identifier_base_versionid_attr_xsi_nil"/>
+				</Complex>
+			</Complex>
+		</Complex>
+		<Complex path="oi:footprint">
+			<Primitive path="@nilReason" mapping="oi_footprint_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="oi_footprint_attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="oi_footprint_attr_owns"/>
+			<Primitive path="@xsi:nil" mapping="oi_footprint_attr_xsi_nil"/>
+			<Geometry path="." mapping="oi_footprint_value"/>
+		</Complex>
+		<Complex path="oi:interpolationType">
+			<Primitive path="@owns" mapping="oi_interpolationtype_attr_owns"/>
+			<Primitive path="@nilReason" mapping="oi_interpolationtype_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="oi_interpolationtype_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="oi_interpolationtype_fk" toColumns="attr_gml_id"/>
+				<Href mapping="oi_interpolationtype_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="oi:name">
+			<Primitive path="text()" mapping="oi_name"/>
+			<Primitive path="@nilReason" mapping="oi_name_attr_nilreason"/>
+			<Primitive path="@xsi:nil" mapping="oi_name_attr_xsi_nil"/>
+		</Complex>
+		<Complex path="oi:beginLifespanVersion">
+			<Primitive path="text()" mapping="oi_beginlifespanversion"/>
+			<Primitive path="@frame" mapping="oi_beginlifespanversion_attr_frame"/>
+			<Primitive path="@calendarEraName" mapping="oi_beginlifespanversion_attr_calendareraname"/>
+			<Primitive path="@indeterminatePosition" mapping="oi_beginlifespanversion_attr_indeterminateposition"/>
+			<Primitive path="@xsi:nil" mapping="oi_beginlifespanversion_attr_xsi_nil"/>
+		</Complex>
+		<Complex path="oi:endLifespanVersion">
+			<Primitive path="text()" mapping="oi_endlifespanversion"/>
+			<Primitive path="@frame" mapping="oi_endlifespanversion_attr_frame"/>
+			<Primitive path="@calendarEraName" mapping="oi_endlifespanversion_attr_calendareraname"/>
+			<Primitive path="@indeterminatePosition" mapping="oi_endlifespanversion_attr_indeterminateposition"/>
+			<Primitive path="@xsi:nil" mapping="oi_endlifespanversion_attr_xsi_nil"/>
+		</Complex>
+		<Complex path="oi:contributingOrthoimageCoverage">
+			<Join table="oi_orthoimagecoverage_oi_contributingorthoimagecoverage" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Complex path="oi:OrthoimageAggregation">
+				<Complex path="oi:contributingFootprint">
+					<Primitive path="@nilReason" mapping="oi_orthoimageaggregation_oi_contributingfootprint_attr_ni_196"/>
+					<Primitive path="@gml:remoteSchema" mapping="oi_orthoimageaggregation_oi_contributingfootprint_attr_gm_197"/>
+					<Primitive path="@owns" mapping="oi_orthoimageaggregation_oi_contributingfootprint_attr_owns"/>
+					<Geometry path="." mapping="oi_orthoimageaggregation_oi_contributingfootprint_value"/>
+				</Complex>
+				<Complex path="oi:contributingOrthoimageCoverage">
+					<Primitive path="@nilReason" mapping="oi_orthoimageaggregation_oi_contributingorthoimagecoverag_198"/>
+					<Primitive path="@gml:remoteSchema" mapping="oi_orthoimageaggregation_oi_contributingorthoimagecoverag_199"/>
+					<Primitive path="@owns" mapping="oi_orthoimageaggregation_oi_contributingorthoimagecoverag_200"/>
+					<Feature path=".">
+						<Join table="?" fromColumns="oi_orthoimageaggregation_oi_contributingorthoimagecoverage_fk" toColumns="attr_gml_id"/>
+						<Href mapping="oi_orthoimageaggregation_oi_contributingorthoimagecoverag_201"/>
+					</Feature>
+				</Complex>
+			</Complex>
+		</Complex>
+		<Complex path="oi:mosaicElement">
+			<Join table="oi_orthoimagecoverage_oi_mosaicelement" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Primitive path="@nilReason" mapping="attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="attr_owns"/>
+			<Primitive path="@xsi:nil" mapping="attr_xsi_nil"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="fk" toColumns="attr_gml_id"/>
+				<Href mapping="href"/>
+			</Feature>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="oi:SingleMosaicElement" table="oi_singlemosaicelement">
+		<FIDMapping prefix="OI_SINGLEMOSAICELEMENT_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="oi:inspireId">
+			<Complex path="base:Identifier">
+				<Primitive path="base:localId" mapping="oi_inspireid_base_identifier_base_localid"/>
+				<Primitive path="base:namespace" mapping="oi_inspireid_base_identifier_base_namespace"/>
+				<Complex path="base:versionId">
+					<Primitive path="text()" mapping="oi_inspireid_base_identifier_base_versionid"/>
+					<Primitive path="@nilReason" mapping="oi_inspireid_base_identifier_base_versionid_attr_nilreason"/>
+					<Primitive path="@xsi:nil" mapping="oi_inspireid_base_identifier_base_versionid_attr_xsi_nil"/>
+				</Complex>
+			</Complex>
+		</Complex>
+		<Complex path="oi:geometry">
+			<Primitive path="@nilReason" mapping="oi_geometry_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="oi_geometry_attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="oi_geometry_attr_owns"/>
+			<Geometry path="." mapping="oi_geometry_value"/>
+		</Complex>
+		<Complex path="oi:imageSourceReference">
+			<Primitive path="text()" mapping="oi_imagesourcereference"/>
+			<Primitive path="@nilReason" mapping="oi_imagesourcereference_attr_nilreason"/>
+			<Primitive path="@xsi:nil" mapping="oi_imagesourcereference_attr_xsi_nil"/>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="gmlcov:GridCoverage" table="gmlcov_gridcoverage">
+		<FIDMapping prefix="GMLCOV_GRIDCOVERAGE_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="gmlcov:metadata">
+			<Join table="gmlcov_gridcoverage_gmlcov_metadata" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Primitive path="@xlink:type" mapping="attr_xlink_type"/>
+			<Primitive path="@xlink:href" mapping="attr_xlink_href"/>
+			<Primitive path="@xlink:role" mapping="attr_xlink_role"/>
+			<Primitive path="@xlink:arcrole" mapping="attr_xlink_arcrole"/>
+			<Primitive path="@xlink:title" mapping="attr_xlink_title"/>
+			<Primitive path="@xlink:show" mapping="attr_xlink_show"/>
+			<Primitive path="@xlink:actuate" mapping="attr_xlink_actuate"/>
+			<Primitive path="@nilReason" mapping="attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="attr_owns"/>
+			<Complex path="gmlcov:Extension"/>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="gmlcov:MultiCurveCoverage" table="gmlcov_multicurvecoverage">
+		<FIDMapping prefix="GMLCOV_MULTICURVECOVERAGE_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="gmlcov:metadata">
+			<Join table="gmlcov_multicurvecoverage_gmlcov_metadata" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Primitive path="@xlink:type" mapping="attr_xlink_type"/>
+			<Primitive path="@xlink:href" mapping="attr_xlink_href"/>
+			<Primitive path="@xlink:role" mapping="attr_xlink_role"/>
+			<Primitive path="@xlink:arcrole" mapping="attr_xlink_arcrole"/>
+			<Primitive path="@xlink:title" mapping="attr_xlink_title"/>
+			<Primitive path="@xlink:show" mapping="attr_xlink_show"/>
+			<Primitive path="@xlink:actuate" mapping="attr_xlink_actuate"/>
+			<Primitive path="@nilReason" mapping="attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="attr_owns"/>
+			<Complex path="gmlcov:Extension"/>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="gmlcov:MultiPointCoverage" table="gmlcov_multipointcoverage">
+		<FIDMapping prefix="GMLCOV_MULTIPOINTCOVERAGE_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="gmlcov:metadata">
+			<Join table="gmlcov_multipointcoverage_gmlcov_metadata" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Primitive path="@xlink:type" mapping="attr_xlink_type"/>
+			<Primitive path="@xlink:href" mapping="attr_xlink_href"/>
+			<Primitive path="@xlink:role" mapping="attr_xlink_role"/>
+			<Primitive path="@xlink:arcrole" mapping="attr_xlink_arcrole"/>
+			<Primitive path="@xlink:title" mapping="attr_xlink_title"/>
+			<Primitive path="@xlink:show" mapping="attr_xlink_show"/>
+			<Primitive path="@xlink:actuate" mapping="attr_xlink_actuate"/>
+			<Primitive path="@nilReason" mapping="attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="attr_owns"/>
+			<Complex path="gmlcov:Extension"/>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="gmlcov:MultiSolidCoverage" table="gmlcov_multisolidcoverage">
+		<FIDMapping prefix="GMLCOV_MULTISOLIDCOVERAGE_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="gmlcov:metadata">
+			<Join table="gmlcov_multisolidcoverage_gmlcov_metadata" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Primitive path="@xlink:type" mapping="attr_xlink_type"/>
+			<Primitive path="@xlink:href" mapping="attr_xlink_href"/>
+			<Primitive path="@xlink:role" mapping="attr_xlink_role"/>
+			<Primitive path="@xlink:arcrole" mapping="attr_xlink_arcrole"/>
+			<Primitive path="@xlink:title" mapping="attr_xlink_title"/>
+			<Primitive path="@xlink:show" mapping="attr_xlink_show"/>
+			<Primitive path="@xlink:actuate" mapping="attr_xlink_actuate"/>
+			<Primitive path="@nilReason" mapping="attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="attr_owns"/>
+			<Complex path="gmlcov:Extension"/>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="gmlcov:MultiSurfaceCoverage" table="gmlcov_multisurfacecoverage">
+		<FIDMapping prefix="GMLCOV_MULTISURFACECOVERAGE_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="gmlcov:metadata">
+			<Join table="gmlcov_multisurfacecoverage_gmlcov_metadata" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Primitive path="@xlink:type" mapping="attr_xlink_type"/>
+			<Primitive path="@xlink:href" mapping="attr_xlink_href"/>
+			<Primitive path="@xlink:role" mapping="attr_xlink_role"/>
+			<Primitive path="@xlink:arcrole" mapping="attr_xlink_arcrole"/>
+			<Primitive path="@xlink:title" mapping="attr_xlink_title"/>
+			<Primitive path="@xlink:show" mapping="attr_xlink_show"/>
+			<Primitive path="@xlink:actuate" mapping="attr_xlink_actuate"/>
+			<Primitive path="@nilReason" mapping="attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="attr_owns"/>
+			<Complex path="gmlcov:Extension"/>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="gmlcov:RectifiedGridCoverage" table="gmlcov_rectifiedgridcoverage">
+		<FIDMapping prefix="GMLCOV_RECTIFIEDGRIDCOVERAGE_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="gmlcov:metadata">
+			<Join table="gmlcov_rectifiedgridcoverage_gmlcov_metadata" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Primitive path="@xlink:type" mapping="attr_xlink_type"/>
+			<Primitive path="@xlink:href" mapping="attr_xlink_href"/>
+			<Primitive path="@xlink:role" mapping="attr_xlink_role"/>
+			<Primitive path="@xlink:arcrole" mapping="attr_xlink_arcrole"/>
+			<Primitive path="@xlink:title" mapping="attr_xlink_title"/>
+			<Primitive path="@xlink:show" mapping="attr_xlink_show"/>
+			<Primitive path="@xlink:actuate" mapping="attr_xlink_actuate"/>
+			<Primitive path="@nilReason" mapping="attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="attr_owns"/>
+			<Complex path="gmlcov:Extension"/>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="gmlcov:ReferenceableGridCoverage" table="gmlcov_referenceablegridcoverage">
+		<FIDMapping prefix="GMLCOV_REFERENCEABLEGRIDCOVERAGE_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="gmlcov:metadata">
+			<Join table="gmlcov_referenceablegridcoverage_gmlcov_metadata" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Primitive path="@xlink:type" mapping="attr_xlink_type"/>
+			<Primitive path="@xlink:href" mapping="attr_xlink_href"/>
+			<Primitive path="@xlink:role" mapping="attr_xlink_role"/>
+			<Primitive path="@xlink:arcrole" mapping="attr_xlink_arcrole"/>
+			<Primitive path="@xlink:title" mapping="attr_xlink_title"/>
+			<Primitive path="@xlink:show" mapping="attr_xlink_show"/>
+			<Primitive path="@xlink:actuate" mapping="attr_xlink_actuate"/>
+			<Primitive path="@nilReason" mapping="attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="attr_owns"/>
+			<Complex path="gmlcov:Extension"/>
+		</Complex>
+	</FeatureTypeMapping>
+</SQLFeatureStore>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<se:FeatureTypeStyle xmlns:se="http://www.opengis.net/se" xmlns:ogc="http://www.opengis.net/ogc" xmlns:us-net-sw="http://inspire.ec.europa.eu/schemas/us-net-sw/4.0" xmlns:us-net-common="http://inspire.ec.europa.eu/schemas/us-net-common/4.0" xmlns:net="http://inspire.ec.europa.eu/schemas/net/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1.0" xsi:schemaLocation="http://www.opengis.net/se http://schemas.opengis.net/se/1.1.0/FeatureStyle.xsd">
+	<se:Name>US.SewerNetwork.SewerPipe</se:Name>
+	<se:FeatureTypeName>us-net-sw:SewerPipe</se:FeatureTypeName>
+	<se:Rule>
+		<ogc:Filter>
+			<ogc:PropertyIsEqualTo>
+				<ogc:Function name="IsCurve">
+					<ogc:PropertyName>net:link/us-net-common:UtilityLink/net:centrelineGeometry</ogc:PropertyName>
+				</ogc:Function>
+				<ogc:Literal>true</ogc:Literal>
+			</ogc:PropertyIsEqualTo>
+		</ogc:Filter>
+		<se:LineSymbolizer>
+			<se:Geometry>
+				<ogc:PropertyName>net:link/us-net-common:UtilityLink/net:centrelineGeometry</ogc:PropertyName>
+			</se:Geometry>
+			<se:Stroke>
+				<se:SvgParameter name="stroke">#000000</se:SvgParameter>
+				<se:SvgParameter name="stroke-width">1</se:SvgParameter>
+			</se:Stroke>
+		</se:LineSymbolizer>
+	</se:Rule>
+</se:FeatureTypeStyle>

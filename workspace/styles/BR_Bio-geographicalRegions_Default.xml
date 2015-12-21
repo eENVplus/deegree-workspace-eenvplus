@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sld:StyledLayerDescriptor xmlns:sld="http://www.opengis.net/sld" xmlns:app="http://www.deegree.org/app" xmlns:deegreeogc="http://www.deegree.org/ogc" xmlns:ogc="http://www.opengis.net/ogc" xmlns:sed="http://www.deegree.org/se" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:se="http://www.opengis.net/se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1.0" xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
+	<sld:NamedLayer>
+		<se:Name>BR.BiogeographicalRegions</se:Name>
+		<sld:UserStyle>
+			<se:Name>BR.BiogeographicalRegions.Default</se:Name>
+			<sld:IsDefault>1</sld:IsDefault>
+			<se:FeatureTypeStyle xmlns:br="http://inspire.ec.europa.eu/schemas/br/4.0" version="1.1.0">
+				<se:Description>
+					<se:Title>Bio-geographical Regions Default Style</se:Title>
+					<se:Abstract>The geometry is rendered using a 50% grey (#808080) fill and a solid black outline with a stroke width of 1 pixel.</se:Abstract>
+				</se:Description>
+				<se:FeatureTypeName>br:Bio-geographicalRegion</se:FeatureTypeName>
+				<se:Rule>
+					<ogc:Filter>
+						<ogc:PropertyIsEqualTo>
+							<ogc:Function name="IsSurface">
+								<ogc:PropertyName>br:geometry</ogc:PropertyName>
+							</ogc:Function>
+							<ogc:Literal>true</ogc:Literal>
+						</ogc:PropertyIsEqualTo>
+					</ogc:Filter>
+					<se:PolygonSymbolizer>
+						<se:Geometry>
+							<ogc:PropertyName>br:geometry</ogc:PropertyName>
+						</se:Geometry>
+						<se:Fill>
+							<se:SvgParameter name="fill">#808080</se:SvgParameter>
+						</se:Fill>
+						<se:Stroke>
+							<se:SvgParameter name="stroke">#000000</se:SvgParameter>
+							<se:SvgParameter name="stroke-width">1</se:SvgParameter>
+						</se:Stroke>
+					</se:PolygonSymbolizer>
+				</se:Rule>
+			</se:FeatureTypeStyle>
+		</sld:UserStyle>
+	</sld:NamedLayer>
+</sld:StyledLayerDescriptor>

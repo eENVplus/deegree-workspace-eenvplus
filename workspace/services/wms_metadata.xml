@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deegreeServicesMetadata xmlns="http://www.deegree.org/services/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.2.0" xsi:schemaLocation="http://www.deegree.org/services/metadata http://schemas.deegree.org/services/metadata/3.2.0/metadata.xsd">
+	<ServiceIdentification>
+		<Title>eENVplus WMS</Title>
+		<Abstract>This is the eENVplus INSPIRE View Service</Abstract>
+		<Fees>conditions unknown</Fees>
+		<AccessConstraints>None</AccessConstraints>
+	</ServiceIdentification>
+	<ServiceProvider>
+		<ProviderName>eENVplus Project</ProviderName>
+		<ProviderSite>http://www.eenvplus.eu/</ProviderSite>
+		<ServiceContact>
+			<IndividualName>Alessio Giori</IndividualName>
+			<PositionName>Analyst and Software developer</PositionName>
+			<Phone>+390461283393</Phone>
+			<Facsimile>+390461283398</Facsimile>
+			<ElectronicMailAddress>info@eenvplus.eu</ElectronicMailAddress>
+			<Address>
+				<DeliveryPoint>Via alla Cascata, 56/C</DeliveryPoint>
+				<City>Trento</City>
+				<AdministrativeArea>tn</AdministrativeArea>
+				<PostalCode>38123</PostalCode>
+				<Country>Italy</Country>
+			</Address>
+			<OnlineResource>http://www.eenvplus.eu/</OnlineResource>
+			<HoursOfService>8x5</HoursOfService>
+			<ContactInstructions>Do not hesitate to call</ContactInstructions>
+			<Role>PointOfContact</Role>
+		</ServiceContact>
+	</ServiceProvider>
+	<!-- Extended Capabilities for INSPIRE View Service -->
+	<ExtendedCapabilities protocolVersions="1.3.0">
+		<inspire_vs:ExtendedCapabilities xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0" xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://inspire.ec.europa.eu/schemas/common/1.0 http://inspire.ec.europa.eu/schemas/common/1.0/common.xsd http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd">
+			<inspire_common:ResourceLocator>
+				<inspire_common:URL>http://eenvplus.sinergis.it/deegree/services/wms?service=WMS&amp;request=GetCapabilities</inspire_common:URL>
+				<inspire_common:MediaType>text/xml</inspire_common:MediaType>
+			</inspire_common:ResourceLocator>
+			<inspire_common:ResourceType>service</inspire_common:ResourceType>
+			<inspire_common:TemporalReference/>
+			<inspire_common:Conformity>
+				<inspire_common:Specification>
+					<inspire_common:Title>eENVplus WMS</inspire_common:Title>
+					<inspire_common:DateOfPublication>2015-07-24</inspire_common:DateOfPublication>
+				</inspire_common:Specification>
+				<inspire_common:Degree>notEvaluated</inspire_common:Degree>
+			</inspire_common:Conformity>
+			<inspire_common:MetadataPointOfContact>
+				<inspire_common:OrganisationName>Fondazione GraphiTech</inspire_common:OrganisationName>
+				<inspire_common:EmailAddress>eenvplus@graphitech.it</inspire_common:EmailAddress>
+			</inspire_common:MetadataPointOfContact>
+			<inspire_common:MetadataDate>2015-07-24</inspire_common:MetadataDate>
+			<inspire_common:SpatialDataServiceType>view</inspire_common:SpatialDataServiceType>
+			<inspire_common:MandatoryKeyword>
+				<inspire_common:KeywordValue>infoFeatureAccessService</inspire_common:KeywordValue>
+			</inspire_common:MandatoryKeyword>
+			<inspire_common:SupportedLanguages>
+				<inspire_common:DefaultLanguage>
+					<inspire_common:Language>eng</inspire_common:Language>
+				</inspire_common:DefaultLanguage>
+			</inspire_common:SupportedLanguages>
+			<inspire_common:ResponseLanguage>
+				<inspire_common:Language>eng</inspire_common:Language>
+			</inspire_common:ResponseLanguage>
+		</inspire_vs:ExtendedCapabilities>
+	</ExtendedCapabilities>
+</deegreeServicesMetadata>

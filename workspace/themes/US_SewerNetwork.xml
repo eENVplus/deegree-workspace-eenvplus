@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Themes xmlns="http://www.deegree.org/themes/standard" xmlns:d="http://www.deegree.org/metadata/description" xmlns:s="http://www.deegree.org/metadata/spatial" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.2.0" xsi:schemaLocation="http://www.deegree.org/themes/standard http://schemas.deegree.org/themes/3.2.0/themes.xsd">
+	<LayerStoreId>US_SewerNetwork</LayerStoreId>
+	<Theme>
+		<Identifier>US.SewerNetwork</Identifier>
+		<d:Title>Sewer Network</d:Title>
+		<d:Abstract>WMS Sewer Network layer</d:Abstract>
+		<d:Keywords>
+			<d:Keyword>Sewer Network</d:Keyword>
+		</d:Keywords>
+		<s:CRS>EPSG:3035 EPSG:4258 EPSG:4326 CRS:84</s:CRS>
+		<Layer>US.SewerNetwork.SewerPipe</Layer>
+		<Layer>US.SewerNetwork.Appurtenance</Layer>
+	</Theme>
+</Themes>

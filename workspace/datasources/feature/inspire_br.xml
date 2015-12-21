@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SQLFeatureStore xmlns="http://www.deegree.org/datasource/feature/sql" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:br="http://inspire.ec.europa.eu/schemas/br/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.1.0" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd">
+	<JDBCConnId>deegree_inspire_br</JDBCConnId>
+	<StorageCRS srid="0" dim="2D">EPSG:4326</StorageCRS>
+	<GMLSchema>../../appschemas/inspire/br/4.0/Bio-geographicalRegions.xsd</GMLSchema>
+	<FeatureTypeMapping name="br:Bio-geographicalRegion" table="br_bio_geographicalregion">
+		<FIDMapping prefix="BR_BIO-GEOGRAPHICALREGION_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="br:inspireId">
+			<Complex path="base:Identifier">
+				<Primitive path="base:localId" mapping="br_inspireid_base_identifier_base_localid"/>
+				<Primitive path="base:namespace" mapping="br_inspireid_base_identifier_base_namespace"/>
+				<Complex path="base:versionId">
+					<Primitive path="text()" mapping="br_inspireid_base_identifier_base_versionid"/>
+					<Primitive path="@nilReason" mapping="br_inspireid_base_identifier_base_versionid_attr_nilreason"/>
+					<Primitive path="@xsi:nil" mapping="br_inspireid_base_identifier_base_versionid_attr_xsi_nil"/>
+				</Complex>
+			</Complex>
+		</Complex>
+		<Complex path="br:geometry">
+			<Primitive path="@nilReason" mapping="br_geometry_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="br_geometry_attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="br_geometry_attr_owns"/>
+			<Geometry path="." mapping="br_geometry_value"/>
+		</Complex>
+		<Complex path="br:regionClassification">
+			<Primitive path="@owns" mapping="br_regionclassification_attr_owns"/>
+			<Primitive path="@nilReason" mapping="br_regionclassification_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="br_regionclassification_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="br_regionclassification_fk" toColumns="attr_gml_id"/>
+				<Href mapping="br_regionclassification_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="br:regionClassificationScheme">
+			<Primitive path="@owns" mapping="br_regionclassificationscheme_attr_owns"/>
+			<Primitive path="@nilReason" mapping="br_regionclassificationscheme_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="br_regionclassificationscheme_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="br_regionclassificationscheme_fk" toColumns="attr_gml_id"/>
+				<Href mapping="br_regionclassificationscheme_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="br:regionClassificationLevel">
+			<Primitive path="@owns" mapping="br_regionclassificationlevel_attr_owns"/>
+			<Primitive path="@nilReason" mapping="br_regionclassificationlevel_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="br_regionclassificationlevel_attr_gml_remoteschema"/>
+			<Primitive path="@xsi:nil" mapping="br_regionclassificationlevel_attr_xsi_nil"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="br_regionclassificationlevel_fk" toColumns="attr_gml_id"/>
+				<Href mapping="br_regionclassificationlevel_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="br:beginLifespanVersion">
+			<Primitive path="text()" mapping="br_beginlifespanversion"/>
+			<Primitive path="@nilReason" mapping="br_beginlifespanversion_attr_nilreason"/>
+			<Primitive path="@xsi:nil" mapping="br_beginlifespanversion_attr_xsi_nil"/>
+		</Complex>
+		<Complex path="br:endLifespanVersion">
+			<Primitive path="text()" mapping="br_endlifespanversion"/>
+			<Primitive path="@nilReason" mapping="br_endlifespanversion_attr_nilreason"/>
+			<Primitive path="@xsi:nil" mapping="br_endlifespanversion_attr_xsi_nil"/>
+		</Complex>
+	</FeatureTypeMapping>
+</SQLFeatureStore>

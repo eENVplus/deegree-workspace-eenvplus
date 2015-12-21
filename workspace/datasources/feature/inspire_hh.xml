@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SQLFeatureStore xmlns="http://www.deegree.org/datasource/feature/sql" xmlns:su-core="http://inspire.ec.europa.eu/schemas/su-core/4.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:hh="http://inspire.ec.europa.eu/schemas/hh/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.1.0" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd">
+	<JDBCConnId>deegree_inspire_hh</JDBCConnId>
+	<StorageCRS srid="0" dim="2D">EPSG:4326</StorageCRS>
+	<GMLSchema>../../appschemas/inspire/hh/4.0/HumanHealth.xsd</GMLSchema>
+	<FeatureTypeMapping name="hh:Biomarker" table="hh_biomarker">
+		<FIDMapping prefix="HH_BIOMARKER_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="hh:aggregationUnit">
+			<Primitive path="@nilReason" mapping="hh_aggregationunit_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_aggregationunit_attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="hh_aggregationunit_attr_owns"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_aggregationunit_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_aggregationunit_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:biomarkerName">
+			<Complex path="hh:BiomarkerType">
+				<Complex path="hh:chemical">
+					<Primitive path="@owns" mapping="hh_biomarkername_hh_biomarkertype_hh_chemical_attr_owns"/>
+					<Primitive path="@nilReason" mapping="hh_biomarkername_hh_biomarkertype_hh_chemical_attr_nilreason"/>
+					<Primitive path="@gml:remoteSchema" mapping="hh_biomarkername_hh_biomarkertype_hh_chemical_attr_gml_re_9"/>
+					<Feature path=".">
+						<Join table="?" fromColumns="hh_biomarkername_hh_biomarkertype_hh_chemical_fk" toColumns="attr_gml_id"/>
+						<Href mapping="hh_biomarkername_hh_biomarkertype_hh_chemical_href"/>
+					</Feature>
+				</Complex>
+				<Complex path="hh:matrix">
+					<Primitive path="@owns" mapping="hh_biomarkername_hh_biomarkertype_hh_matrix_attr_owns"/>
+					<Primitive path="@nilReason" mapping="hh_biomarkername_hh_biomarkertype_hh_matrix_attr_nilreason"/>
+					<Primitive path="@gml:remoteSchema" mapping="hh_biomarkername_hh_biomarkertype_hh_matrix_attr_gml_remo_10"/>
+					<Feature path=".">
+						<Join table="?" fromColumns="hh_biomarkername_hh_biomarkertype_hh_matrix_fk" toColumns="attr_gml_id"/>
+						<Href mapping="hh_biomarkername_hh_biomarkertype_hh_matrix_href"/>
+					</Feature>
+				</Complex>
+			</Complex>
+		</Complex>
+		<Complex path="hh:biomarkerStatisticalParameter">
+			<Complex path="hh:BiomarkerStatisticalParameterType">
+				<Complex path="hh:geometricMean">
+					<Primitive path="text()" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_12"/>
+					<Primitive path="@uom" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_13"/>
+				</Complex>
+				<Complex path="hh:CI95ofGM">
+					<Primitive path="text()" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_14"/>
+					<Primitive path="@uom" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_15"/>
+				</Complex>
+				<Complex path="hh:P50">
+					<Primitive path="text()" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_16"/>
+					<Primitive path="@uom" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_17"/>
+				</Complex>
+				<Complex path="hh:P90">
+					<Primitive path="text()" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_18"/>
+					<Primitive path="@uom" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_19"/>
+				</Complex>
+				<Complex path="hh:P95">
+					<Primitive path="text()" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_20"/>
+					<Primitive path="@uom" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_21"/>
+				</Complex>
+				<Complex path="hh:CI95ofP95">
+					<Primitive path="text()" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_22"/>
+					<Primitive path="@uom" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_23"/>
+				</Complex>
+				<Complex path="hh:maximum">
+					<Primitive path="text()" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_24"/>
+					<Primitive path="@uom" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_25"/>
+				</Complex>
+				<Primitive path="hh:numberOfPartecipants" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_26"/>
+				<Primitive path="hh:pinLOD" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_27"/>
+				<Primitive path="hh:LOQ" mapping="hh_biomarkerstatisticalparameter_hh_biomarkerstatisticalp_28"/>
+			</Complex>
+		</Complex>
+		<Complex path="hh:referencePeriod">
+			<Complex path="hh:ReferencePeriodType">
+				<Primitive path="hh:startDate" mapping="hh_referenceperiod_hh_referenceperiodtype_hh_startdate"/>
+				<Primitive path="hh:endDate" mapping="hh_referenceperiod_hh_referenceperiodtype_hh_enddate"/>
+			</Complex>
+		</Complex>
+		<Complex path="hh:ageRange">
+			<Complex path="hh:AgeRangeType">
+				<Complex path="hh:startAge">
+					<Complex path="hh:Age">
+						<Primitive path="hh:month" mapping="hh_agerange_hh_agerangetype_hh_startage_hh_age_hh_month"/>
+						<Primitive path="hh:week" mapping="hh_agerange_hh_agerangetype_hh_startage_hh_age_hh_week"/>
+						<Primitive path="hh:year" mapping="hh_agerange_hh_agerangetype_hh_startage_hh_age_hh_year"/>
+					</Complex>
+				</Complex>
+				<Complex path="hh:range">
+					<Complex path="hh:Age">
+						<Primitive path="hh:month" mapping="hh_agerange_hh_agerangetype_hh_range_hh_age_hh_month"/>
+						<Primitive path="hh:week" mapping="hh_agerange_hh_agerangetype_hh_range_hh_age_hh_week"/>
+						<Primitive path="hh:year" mapping="hh_agerange_hh_agerangetype_hh_range_hh_age_hh_year"/>
+					</Complex>
+				</Complex>
+			</Complex>
+		</Complex>
+		<Complex path="hh:gender">
+			<Primitive path="@owns" mapping="hh_gender_attr_owns"/>
+			<Primitive path="@nilReason" mapping="hh_gender_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_gender_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_gender_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_gender_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:refersTo">
+			<Complex path="hh:BiomarkerThematicMetadata">
+				<Complex path="hh:studyType">
+					<Primitive path="@gco:nilReason" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_att_29"/>
+					<Primitive path="gco:CharacterString" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gco_30"/>
+					<Complex path="gmd:PT_FreeText">
+						<Primitive path="@id" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_32"/>
+						<Primitive path="@uuid" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_33"/>
+						<Complex path="gmd:textGroup">
+							<Join table="hh_biomarker_hh_refersto_hh_biomarkerthematicmetadata_hh__34" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+							<Primitive path="@xlink:type" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_35"/>
+							<Primitive path="@xlink:href" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_36"/>
+							<Primitive path="@xlink:role" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_37"/>
+							<Primitive path="@xlink:arcrole" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_38"/>
+							<Primitive path="@xlink:title" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_39"/>
+							<Primitive path="@xlink:show" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_40"/>
+							<Primitive path="@xlink:actuate" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_41"/>
+							<Primitive path="@uuidref" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_42"/>
+							<Primitive path="@gco:nilReason" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_43"/>
+							<Complex path="gmd:LocalisedCharacterString">
+								<Primitive path="text()" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_44"/>
+								<Primitive path="@id" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_45"/>
+								<Primitive path="@locale" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_studytype_gmd_46"/>
+							</Complex>
+						</Complex>
+					</Complex>
+				</Complex>
+				<Complex path="hh:areaType">
+					<Primitive path="@gco:nilReason" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_attr_47"/>
+					<Primitive path="gco:CharacterString" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gco__48"/>
+					<Complex path="gmd:PT_FreeText">
+						<Primitive path="@id" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__50"/>
+						<Primitive path="@uuid" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__51"/>
+						<Complex path="gmd:textGroup">
+							<Join table="hh_biomarker_hh_refersto_hh_biomarkerthematicmetadata_hh__52" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+							<Primitive path="@xlink:type" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__53"/>
+							<Primitive path="@xlink:href" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__54"/>
+							<Primitive path="@xlink:role" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__55"/>
+							<Primitive path="@xlink:arcrole" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__56"/>
+							<Primitive path="@xlink:title" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__57"/>
+							<Primitive path="@xlink:show" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__58"/>
+							<Primitive path="@xlink:actuate" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__59"/>
+							<Primitive path="@uuidref" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__60"/>
+							<Primitive path="@gco:nilReason" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__61"/>
+							<Complex path="gmd:LocalisedCharacterString">
+								<Primitive path="text()" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__62"/>
+								<Primitive path="@id" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__63"/>
+								<Primitive path="@locale" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_areatype_gmd__64"/>
+							</Complex>
+						</Complex>
+					</Complex>
+				</Complex>
+				<Complex path="hh:specificSubPopulation">
+					<Primitive path="@gco:nilReason" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_66"/>
+					<Primitive path="gco:CharacterString" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_67"/>
+					<Complex path="gmd:PT_FreeText">
+						<Primitive path="@id" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_69"/>
+						<Primitive path="@uuid" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_70"/>
+						<Complex path="gmd:textGroup">
+							<Join table="hh_biomarker_hh_refersto_hh_biomarkerthematicmetadata_hh__71" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+							<Primitive path="@xlink:type" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_72"/>
+							<Primitive path="@xlink:href" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_73"/>
+							<Primitive path="@xlink:role" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_74"/>
+							<Primitive path="@xlink:arcrole" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_75"/>
+							<Primitive path="@xlink:title" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_76"/>
+							<Primitive path="@xlink:show" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_77"/>
+							<Primitive path="@xlink:actuate" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_78"/>
+							<Primitive path="@uuidref" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_79"/>
+							<Primitive path="@gco:nilReason" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_80"/>
+							<Complex path="gmd:LocalisedCharacterString">
+								<Primitive path="text()" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_81"/>
+								<Primitive path="@id" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_82"/>
+								<Primitive path="@locale" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_specificsubpo_83"/>
+							</Complex>
+						</Complex>
+					</Complex>
+				</Complex>
+				<Complex path="hh:meanAge">
+					<Complex path="hh:Age">
+						<Primitive path="hh:month" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_meanage_hh_ag_84"/>
+						<Primitive path="hh:week" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_meanage_hh_ag_85"/>
+						<Primitive path="hh:year" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_meanage_hh_ag_86"/>
+					</Complex>
+				</Complex>
+				<Complex path="hh:describedBy">
+					<Primitive path="@nilReason" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_describedby_a_87"/>
+					<Primitive path="@gml:remoteSchema" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_describedby_a_88"/>
+					<Primitive path="@owns" mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_describedby_a_89"/>
+					<Feature path=".">
+						<Join table="?" fromColumns="hh_refersto_hh_biomarkerthematicmetadata_hh_describedby_fk" toColumns="attr_gml_id"/>
+						<Href mapping="hh_refersto_hh_biomarkerthematicmetadata_hh_describedby_href"/>
+					</Feature>
+				</Complex>
+			</Complex>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="hh:Disease" table="hh_disease">
+		<FIDMapping prefix="HH_DISEASE_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="hh:aggregationUnit">
+			<Primitive path="@nilReason" mapping="hh_aggregationunit_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_aggregationunit_attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="hh_aggregationunit_attr_owns"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_aggregationunit_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_aggregationunit_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:ageRange">
+			<Primitive path="@nilReason" mapping="hh_agerange_attr_nilreason"/>
+			<Primitive path="@xsi:nil" mapping="hh_agerange_attr_xsi_nil"/>
+			<Complex path="hh:AgeRangeType">
+				<Complex path="hh:startAge">
+					<Complex path="hh:Age">
+						<Primitive path="hh:month" mapping="hh_agerange_hh_agerangetype_hh_startage_hh_age_hh_month"/>
+						<Primitive path="hh:week" mapping="hh_agerange_hh_agerangetype_hh_startage_hh_age_hh_week"/>
+						<Primitive path="hh:year" mapping="hh_agerange_hh_agerangetype_hh_startage_hh_age_hh_year"/>
+					</Complex>
+				</Complex>
+				<Complex path="hh:range">
+					<Complex path="hh:Age">
+						<Primitive path="hh:month" mapping="hh_agerange_hh_agerangetype_hh_range_hh_age_hh_month"/>
+						<Primitive path="hh:week" mapping="hh_agerange_hh_agerangetype_hh_range_hh_age_hh_week"/>
+						<Primitive path="hh:year" mapping="hh_agerange_hh_agerangetype_hh_range_hh_age_hh_year"/>
+					</Complex>
+				</Complex>
+			</Complex>
+		</Complex>
+		<Complex path="hh:diseaseMeasure">
+			<Join table="hh_disease_hh_diseasemeasure" fromColumns="attr_gml_id" toColumns="parentfk" orderColumns="num" numbered="true"/>
+			<Complex path="hh:DiseaseMeasure">
+				<Complex path="hh:diseaseMeasureType">
+					<Primitive path="@owns" mapping="hh_diseasemeasure_hh_diseasemeasuretype_attr_owns"/>
+					<Primitive path="@nilReason" mapping="hh_diseasemeasure_hh_diseasemeasuretype_attr_nilreason"/>
+					<Primitive path="@gml:remoteSchema" mapping="hh_diseasemeasure_hh_diseasemeasuretype_attr_gml_remoteschema"/>
+					<Feature path=".">
+						<Join table="?" fromColumns="hh_diseasemeasure_hh_diseasemeasuretype_fk" toColumns="attr_gml_id"/>
+						<Href mapping="hh_diseasemeasure_hh_diseasemeasuretype_href"/>
+					</Feature>
+				</Complex>
+				<Primitive path="hh:value" mapping="hh_diseasemeasure_hh_value"/>
+			</Complex>
+		</Complex>
+		<Complex path="hh:gender">
+			<Primitive path="@owns" mapping="hh_gender_attr_owns"/>
+			<Primitive path="@nilReason" mapping="hh_gender_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_gender_attr_gml_remoteschema"/>
+			<Primitive path="@xsi:nil" mapping="hh_gender_attr_xsi_nil"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_gender_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_gender_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:referencePeriod">
+			<Complex path="hh:ReferencePeriodType">
+				<Primitive path="hh:startDate" mapping="hh_referenceperiod_hh_referenceperiodtype_hh_startdate"/>
+				<Primitive path="hh:endDate" mapping="hh_referenceperiod_hh_referenceperiodtype_hh_enddate"/>
+			</Complex>
+		</Complex>
+		<Complex path="hh:pathology">
+			<Primitive path="@owns" mapping="hh_pathology_attr_owns"/>
+			<Primitive path="@nilReason" mapping="hh_pathology_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_pathology_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_pathology_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_pathology_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:COD">
+			<Primitive path="@owns" mapping="hh_cod_attr_owns"/>
+			<Primitive path="@nilReason" mapping="hh_cod_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_cod_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_cod_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_cod_href"/>
+			</Feature>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="hh:EnvHealthDeterminantMeasure" table="hh_envhealthdeterminantmeasure">
+		<FIDMapping prefix="HH_ENVHEALTHDETERMINANTMEASURE_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="hh:location">
+			<Primitive path="@nilReason" mapping="hh_location_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_location_attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="hh_location_attr_owns"/>
+			<Geometry path="." mapping="hh_location_value"/>
+		</Complex>
+		<Complex path="hh:type">
+			<Primitive path="@owns" mapping="hh_type_attr_owns"/>
+			<Primitive path="@nilReason" mapping="hh_type_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_type_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_type_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_type_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:beginLifespanVersion">
+			<Primitive path="text()" mapping="hh_beginlifespanversion"/>
+			<Primitive path="@nilReason" mapping="hh_beginlifespanversion_attr_nilreason"/>
+			<Primitive path="@xsi:nil" mapping="hh_beginlifespanversion_attr_xsi_nil"/>
+		</Complex>
+		<Complex path="hh:endLifespanVersion">
+			<Primitive path="text()" mapping="hh_endlifespanversion"/>
+			<Primitive path="@nilReason" mapping="hh_endlifespanversion_attr_nilreason"/>
+			<Primitive path="@xsi:nil" mapping="hh_endlifespanversion_attr_xsi_nil"/>
+		</Complex>
+		<Complex path="hh:validFrom">
+			<Primitive path="text()" mapping="hh_validfrom"/>
+			<Primitive path="@nilReason" mapping="hh_validfrom_attr_nilreason"/>
+			<Primitive path="@xsi:nil" mapping="hh_validfrom_attr_xsi_nil"/>
+		</Complex>
+		<Complex path="hh:validTo">
+			<Primitive path="text()" mapping="hh_validto"/>
+			<Primitive path="@nilReason" mapping="hh_validto_attr_nilreason"/>
+			<Primitive path="@xsi:nil" mapping="hh_validto_attr_xsi_nil"/>
+		</Complex>
+		<Complex path="hh:measure">
+			<Primitive path="text()" mapping="hh_measure"/>
+			<Primitive path="@uom" mapping="hh_measure_attr_uom"/>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="hh:EnvHealthDeterminantStatisticalData" table="hh_envhealthdeterminantstatisticaldata">
+		<FIDMapping prefix="HH_ENVHEALTHDETERMINANTSTATISTICALDATA_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="hh:aggregationUnit">
+			<Primitive path="@nilReason" mapping="hh_aggregationunit_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_aggregationunit_attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="hh_aggregationunit_attr_owns"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_aggregationunit_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_aggregationunit_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:statisticalMethod">
+			<Primitive path="@owns" mapping="hh_statisticalmethod_attr_owns"/>
+			<Primitive path="@nilReason" mapping="hh_statisticalmethod_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_statisticalmethod_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_statisticalmethod_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_statisticalmethod_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:type">
+			<Primitive path="@owns" mapping="hh_type_attr_owns"/>
+			<Primitive path="@nilReason" mapping="hh_type_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_type_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_type_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_type_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:measure">
+			<Primitive path="text()" mapping="hh_measure"/>
+			<Primitive path="@uom" mapping="hh_measure_attr_uom"/>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="hh:GeneralHealthStatistics" table="hh_generalhealthstatistics">
+		<FIDMapping prefix="HH_GENERALHEALTHSTATISTICS_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="hh:aggregationUnit">
+			<Primitive path="@nilReason" mapping="hh_aggregationunit_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_aggregationunit_attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="hh_aggregationunit_attr_owns"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_aggregationunit_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_aggregationunit_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:ageRange">
+			<Primitive path="@nilReason" mapping="hh_agerange_attr_nilreason"/>
+			<Primitive path="@xsi:nil" mapping="hh_agerange_attr_xsi_nil"/>
+			<Complex path="hh:AgeRangeType">
+				<Complex path="hh:startAge">
+					<Complex path="hh:Age">
+						<Primitive path="hh:month" mapping="hh_agerange_hh_agerangetype_hh_startage_hh_age_hh_month"/>
+						<Primitive path="hh:week" mapping="hh_agerange_hh_agerangetype_hh_startage_hh_age_hh_week"/>
+						<Primitive path="hh:year" mapping="hh_agerange_hh_agerangetype_hh_startage_hh_age_hh_year"/>
+					</Complex>
+				</Complex>
+				<Complex path="hh:range">
+					<Complex path="hh:Age">
+						<Primitive path="hh:month" mapping="hh_agerange_hh_agerangetype_hh_range_hh_age_hh_month"/>
+						<Primitive path="hh:week" mapping="hh_agerange_hh_agerangetype_hh_range_hh_age_hh_week"/>
+						<Primitive path="hh:year" mapping="hh_agerange_hh_agerangetype_hh_range_hh_age_hh_year"/>
+					</Complex>
+				</Complex>
+			</Complex>
+		</Complex>
+		<Complex path="hh:gender">
+			<Primitive path="@owns" mapping="hh_gender_attr_owns"/>
+			<Primitive path="@nilReason" mapping="hh_gender_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_gender_attr_gml_remoteschema"/>
+			<Primitive path="@xsi:nil" mapping="hh_gender_attr_xsi_nil"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_gender_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_gender_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:generalHealthName">
+			<Primitive path="@owns" mapping="hh_generalhealthname_attr_owns"/>
+			<Primitive path="@nilReason" mapping="hh_generalhealthname_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_generalhealthname_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_generalhealthname_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_generalhealthname_href"/>
+			</Feature>
+		</Complex>
+		<Primitive path="hh:generalHealthValue" mapping="hh_generalhealthvalue"/>
+		<Complex path="hh:referencePeriod">
+			<Complex path="hh:ReferencePeriodType">
+				<Primitive path="hh:startDate" mapping="hh_referenceperiod_hh_referenceperiodtype_hh_startdate"/>
+				<Primitive path="hh:endDate" mapping="hh_referenceperiod_hh_referenceperiodtype_hh_enddate"/>
+			</Complex>
+		</Complex>
+	</FeatureTypeMapping>
+	<FeatureTypeMapping name="hh:HealthServicesStatistic" table="hh_healthservicesstatistic">
+		<FIDMapping prefix="HH_HEALTHSERVICESSTATISTIC_">
+			<Column name="attr_gml_id" type="string"/>
+			<UUIDGenerator/>
+		</FIDMapping>
+		<Complex path="gml:identifier">
+			<Primitive path="text()" mapping="gml_identifier"/>
+			<Primitive path="@codeSpace" mapping="gml_identifier_attr_codespace"/>
+		</Complex>
+		<Complex path="hh:aggregationUnit">
+			<Primitive path="@nilReason" mapping="hh_aggregationunit_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_aggregationunit_attr_gml_remoteschema"/>
+			<Primitive path="@owns" mapping="hh_aggregationunit_attr_owns"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_aggregationunit_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_aggregationunit_href"/>
+			</Feature>
+		</Complex>
+		<Complex path="hh:healthServiceType">
+			<Primitive path="@owns" mapping="hh_healthservicetype_attr_owns"/>
+			<Primitive path="@nilReason" mapping="hh_healthservicetype_attr_nilreason"/>
+			<Primitive path="@gml:remoteSchema" mapping="hh_healthservicetype_attr_gml_remoteschema"/>
+			<Feature path=".">
+				<Join table="?" fromColumns="hh_healthservicetype_fk" toColumns="attr_gml_id"/>
+				<Href mapping="hh_healthservicetype_href"/>
+			</Feature>
+		</Complex>
+		<Primitive path="hh:healthServiceValue" mapping="hh_healthservicevalue"/>
+		<Complex path="hh:referencePeriod">
+			<Complex path="hh:ReferencePeriodType">
+				<Primitive path="hh:startDate" mapping="hh_referenceperiod_hh_referenceperiodtype_hh_startdate"/>
+				<Primitive path="hh:endDate" mapping="hh_referenceperiod_hh_referenceperiodtype_hh_enddate"/>
+			</Complex>
+		</Complex>
+	</FeatureTypeMapping>
+</SQLFeatureStore>
