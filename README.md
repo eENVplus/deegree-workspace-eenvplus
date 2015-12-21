@@ -27,6 +27,8 @@ First of all, you need to install [Apache Tomcat 7](http://tomcat.apache.org/) a
 
 #### Create PostGIS databases
 
+tbd
+
 
 ####  Import the workspace
 
@@ -49,10 +51,18 @@ You can simply active the "deegree-workspace-eenvplus" by pressing the *Start* b
 
 ### Feature Stores
 
+tbd
+
 ### Ingest sample data
+
+tbd
 
 ### WFSs
 
+tbd
+
 ### WMS
+
+tbd
 
 Consult the [Deegree documentation](http://download.deegree.org/documentation/3.3.15/html/index.html) for more information.
