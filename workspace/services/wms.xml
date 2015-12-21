@@ -10,7 +10,6 @@
 		<wms:ThemeId>SD_SpeciesDistribution</wms:ThemeId>
 		<wms:ThemeId>PS_ProtectedSite</wms:ThemeId>
 		<wms:ThemeId>HY_PhysicalWaters_Waterbodies</wms:ThemeId>
-		<wms:ThemeId>US_SewerNetwork</wms:ThemeId>
 		<wms:ThemeId>HB_Habitat</wms:ThemeId>
 		<wms:ThemeId>BR_Bio-geographicalRegions</wms:ThemeId>
 	</wms:ServiceConfiguration>
