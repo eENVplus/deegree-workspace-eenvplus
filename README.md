@@ -89,7 +89,14 @@ Here you can import a features from a GML file by providing its URL, e.g. "file:
 
 ### WFSs
 
-tbd
+The configuration of each WFS can be found under the `web services > services` section. Instead, they are available at:
+
+- [http://localhost:8080/deegree/services/br?service=WFS&request=GetCapabilities](http://localhost:8080/deegree/services/br?service=WFS&request=GetCapabilities)
+- [http://localhost:8080/deegree/services/hb?service=WFS&request=GetCapabilities](http://localhost:8080/deegree/services/hb?service=WFS&request=GetCapabilities)
+- [http://localhost:8080/deegree/services/hy?service=WFS&request=GetCapabilities](http://localhost:8080/deegree/services/hy?service=WFS&request=GetCapabilities)
+- [http://localhost:8080/deegree/services/ps?service=WFS&request=GetCapabilities](http://localhost:8080/deegree/services/ps?service=WFS&request=GetCapabilities)
+- [http://localhost:8080/deegree/services/sd?service=WFS&request=GetCapabilities](http://localhost:8080/deegree/services/sd?service=WFS&request=GetCapabilities)
+- [http://localhost:8080/deegree/services/us?service=WFS&request=GetCapabilities](http://localhost:8080/deegree/services/us?service=WFS&request=GetCapabilities)
 
 ### WMS
 
