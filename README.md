@@ -29,6 +29,7 @@ First of all, you need to install [Apache Tomcat 7](http://tomcat.apache.org/) a
 
 [Download from the latest version of the eENVplus workspace](https://github.com/eENVplus/deegree-workspace-eenvplus/releases) the file `sql.zip`. Each sql script can be used with `psql` to create the corresponding database and its tables.
 **<u>Please note</u>** that you need to have a PostGIS template called "postgis_template" and PostgreSQL user named "deegree" (without password).
+**<u>Please note</u>** that the created databases store geometries with the SRS EPSG:4326. The geometry can be re-projected to other SRSs by deegree webservices (WFS and WMS).
 
 ####  Import the workspace
 
@@ -60,6 +61,8 @@ The two most common use cases for feature stores are:
 The *eENVplus workspace* comes <u>pre-configured</u> with a SQL feature store for each INSPIRE Data Themes.
 
 ### Ingest sample data
+
+[Download from the latest version of the eENVplus workspace](https://github.com/eENVplus/deegree-workspace-eenvplus/releases) the file `gml.zip`. Each sql script can be used with `psql` to create the corresponding database and its tables.
 
 ### WFSs
 
