@@ -10,9 +10,6 @@ This workspace is a complete INSPIRE View and Download Services setup. It contai
 In order to run deegree, you will need
 
 - Oracle Java 6 JDK, Update 4 or better. We recommend using the latest Java 6 version. Java 7 should also work, but is not as well tested.
-
-Additional components
-
 - PostgreSQL (8.3, 8.4 or 9.0) with PostGIS (1.4 or 1.5)
 
 Consult the [Deegree system requirements page](http://download.deegree.org/documentation/3.3.15/html/installation.html#system-requirements) for more information.
