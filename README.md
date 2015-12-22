@@ -51,12 +51,13 @@ You can simply active the "deegree-workspace-eenvplus" by pressing the *Start* b
 
 ### Feature Stores
 
-Feature stores are those resources that provide access to stored features, mapping from . The two most common use cases for feature stores are:
+Feature stores are those resources that provide access to stored features. In particular, SQL feature store allows to configure highly flexible mappings between feature types and database tables.
+The two most common use cases for feature stores are:
 
 - Accessing via Web Feature Service (WFS)
 - Providing of data for Feature layers (WMS)
 
-The *eENVplus workspace* come configured with a SQL feature store for each INSPIRE Data Themes. 
+The *eENVplus workspace* comes <u>pre-configured</u> with a SQL feature store for each INSPIRE Data Themes.
 
 ### Ingest sample data
 
