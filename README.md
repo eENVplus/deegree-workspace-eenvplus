@@ -64,11 +64,36 @@ The *eENVplus workspace* comes <u>pre-configured</u> with a SQL feature store fo
 5. *Species Distribution*
 6. *Utility and Government Services*
 
-### Ingest sample data
+### Ingest data
+
+Here we explain how a GML file can be ingested to provide some data to the pre-configured WFSs and WMS.
+[Download from the latest version of the eENVplus workspace](https://github.com/eENVplus/deegree-workspace-eenvplus/releases) the file `gml.zip`. It contains a GML file for each of the supported INSPIRE Data Themes:
+
+1. *Bio-geographical Regions*
+2. *Habitats and Biotopes*
+3. *Hydrography*
+4. *Protected Sites*
+5. *Species Distribution*
+6. *Utility and Government Services*
+
+In this example we are going to ingest the `sd.gml` file in the "inspire_sd" feature store.
+Open the deegree console and go to `data stores > feature` and you will find all the available feature stores.
+
+![Deegree feature store](https://raw.githubusercontent.com/eENVplus/deegree-workspace-eenvplus/screenshots/console_featurestore.png "Featurestore Section")
+
+Look for the "inspire_sd" feature store and click its *Loader* button.
+
+![Deegree import features](https://raw.githubusercontent.com/eENVplus/deegree-workspace-eenvplus/screenshots/console_import.png "Import GML feature")
+
+Here you can import a features from a GML file by providing its URL, e.g. "file:///home/user/Downloads/gml/sd.gml", and clicking on  the *Import* button.
 
 ### WFSs
 
+tbd
+
 ### WMS
+
+tbd
 
 ## Need help?
 
