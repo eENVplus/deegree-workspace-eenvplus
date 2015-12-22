@@ -1,7 +1,7 @@
 # deegree-workspace-eenvplus
 Configuration for eENVplus INSPIRE compliant services, using deegree WMS and WFS
 
-This workspace is a complete INSPIRE View and Download Services setup. It contains WFSs (2.0.0 and 1.1.0) configured for all Annex I, II, and III Data Themes and a WMS (1.3.0 and 1.1.1) that illustrates some layers from the eENVplus pilots.
+This workspace is an INSPIRE View and Download Services setup. It contains WFSs (2.0.0 and 1.1.0) configured for *Bio-geographical Regions*, *Habitats and Biotopes*, *Hydrography*, *Protected Sites*, *Species Distribution*, and *Utility and Government Services* Data Themes and a WMS (1.3.0 and 1.1.1) pre-configured with some layers from the eENVplus pilots.
 
 ## Installation
 
@@ -67,7 +67,6 @@ The *eENVplus workspace* comes <u>pre-configured</u> with a SQL feature store fo
 
 Consult the [Deegree documentation](http://download.deegree.org/documentation/3.3.15/html/index.html) for more information.
 
-## Interested?
+## Contact
 
-We offers professional solutions for implementing INSPIRE Download and View Services and harmonizing base data. 
 If you are interested, please [contact us](mailto:umberto.di.staso@graphitech.it).
