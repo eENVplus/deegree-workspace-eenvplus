@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SQLFeatureStore xmlns="http://www.deegree.org/datasource/feature/sql" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3" xmlns:gn="http://inspire.ec.europa.eu/schemas/gn/4.0" xmlns:hy-n="http://inspire.ec.europa.eu/schemas/hy-n/4.0" xmlns:hy-p="http://inspire.ec.europa.eu/schemas/hy-p/4.0" xmlns:hy="http://inspire.ec.europa.eu/schemas/hy/4.0" xmlns:net="http://inspire.ec.europa.eu/schemas/net/4.0" xmlns:omop="http://inspire.ec.europa.eu/schemas/omop/3.0" xmlns:omor="http://inspire.ec.europa.eu/schemas/omor/3.0" xmlns:sr="http://inspire.ec.europa.eu/schemas/sr/4.0" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2" configVersion="3.1.0" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd">
 	<JDBCConnId>deegree_inspire_hy</JDBCConnId>
-	<StorageCRS srid="0" dim="2D">EPSG:4326</StorageCRS>
+	<StorageCRS srid="-1" dim="2D">EPSG:4326</StorageCRS>
 	<GMLSchema>../../appschemas/inspire/hy-n/4.0/HydroNetwork.xsd</GMLSchema>
 	<GMLSchema>../../appschemas/inspire/hy-p/4.0/HydroPhysicalWaters.xsd</GMLSchema>
 	<GMLSchema>../../appschemas/inspire/hy/4.0/HydroBase.xsd</GMLSchema>

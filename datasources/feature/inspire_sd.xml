@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SQLFeatureStore xmlns="http://www.deegree.org/datasource/feature/sql" xmlns:tn="http://inspire.ec.europa.eu/schemas/tn/4.0" xmlns:sd="http://inspire.ec.europa.eu/schemas/sd/4.0" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" xmlns:net="http://inspire.ec.europa.eu/schemas/net/4.0" xmlns:base2="http://inspire.ec.europa.eu/schemas/base2/2.0" xmlns:au="http://inspire.ec.europa.eu/schemas/au/4.0" xmlns:gn="http://inspire.ec.europa.eu/schemas/gn/4.0" xmlns:cp="http://inspire.ec.europa.eu/schemas/cp/4.0" xmlns:bu-base="http://inspire.ec.europa.eu/schemas/bu-base/4.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3" xmlns:ad="http://inspire.ec.europa.eu/schemas/ad/4.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.1.0" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd">
 	<JDBCConnId>deegree_inspire_sd</JDBCConnId>
-	<StorageCRS srid="0" dim="2D">EPSG:4326</StorageCRS>
+	<StorageCRS srid="-1" dim="2D">EPSG:4326</StorageCRS>
 	<GMLSchema>../../appschemas/inspire/sd/4.0/SpeciesDistribution.xsd</GMLSchema>
 	<FeatureTypeMapping name="ad:Address" table="ad_address">
 		<FIDMapping prefix="AD_ADDRESS_">

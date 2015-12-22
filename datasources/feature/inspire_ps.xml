@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SQLFeatureStore xmlns="http://www.deegree.org/datasource/feature/sql" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gn="http://inspire.ec.europa.eu/schemas/gn/4.0" xmlns:base="http://inspire.ec.europa.eu/schemas/base/3.3" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:ps="http://inspire.ec.europa.eu/schemas/ps/4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.1.0" xsi:schemaLocation="http://www.deegree.org/datasource/feature/sql http://schemas.deegree.org/datasource/feature/sql/3.1.0/sql.xsd">
 	<JDBCConnId>deegree_inspire_ps</JDBCConnId>
-	<StorageCRS srid="0" dim="2D">EPSG:4326</StorageCRS>
+	<StorageCRS srid="-1" dim="2D">EPSG:4326</StorageCRS>
 	<GMLSchema>../../appschemas/inspire/ps/4.0/ProtectedSites.xsd</GMLSchema>
 	<FeatureTypeMapping name="gn:NamedPlace" table="gn_namedplace">
 		<FIDMapping prefix="GN_NAMEDPLACE_">
