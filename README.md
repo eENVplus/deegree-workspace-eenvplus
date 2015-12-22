@@ -55,7 +55,14 @@ The two most common use cases for feature stores are:
 - Accessing via Web Feature Service (WFS)
 - Providing of data for Feature layers (WMS)
 
-The *eENVplus workspace* comes <u>pre-configured</u> with a SQL feature store for each INSPIRE Data Themes.
+The *eENVplus workspace* comes <u>pre-configured</u> with a SQL feature store for the following INSPIRE Data Themes:
+
+1. *Bio-geographical Regions*
+2. *Habitats and Biotopes*
+3. *Hydrography*
+4. *Protected Sites*
+5. *Species Distribution*
+6. *Utility and Government Services*
 
 ### Ingest sample data
 
