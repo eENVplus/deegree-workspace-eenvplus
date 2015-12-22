@@ -62,8 +62,6 @@ The *eENVplus workspace* comes <u>pre-configured</u> with a SQL feature store fo
 
 ### Ingest sample data
 
-[Download from the latest version of the eENVplus workspace](https://github.com/eENVplus/deegree-workspace-eenvplus/releases) the file `gml.zip`. Each sql script can be used with `psql` to create the corresponding database and its tables.
-
 ### WFSs
 
 ### WMS
@@ -74,4 +72,5 @@ Consult the [Deegree documentation](http://download.deegree.org/documentation/3.
 
 ## Interested?
 
-Please [contact us](mailto:umberto.di.staso@graphitech.it).
+We offers professional solutions for implementing INSPIRE Download and View Services and harmonizing base data. 
+If you are interested, please [contact us](mailto:umberto.di.staso@graphitech.it).
