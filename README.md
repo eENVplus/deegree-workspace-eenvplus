@@ -65,4 +65,6 @@ The *eENVplus workspace* comes <u>pre-configured</u> with a SQL feature store fo
 
 ### WMS
 
+## Need help?
+
 Consult the [Deegree documentation](http://download.deegree.org/documentation/3.3.15/html/index.html) for more information.
