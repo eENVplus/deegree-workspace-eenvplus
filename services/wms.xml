@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wms:deegreeWMS xmlns:wms="http://www.deegree.org/services/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dgws="http://www.deegree.org/webservices" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" configVersion="3.2.0" xsi:schemaLocation="http://www.deegree.org/services/wms http://schemas.deegree.org/services/wms/3.2.0/wms_configuration.xsd">
 	<wms:ServiceConfiguration>
-    
+
     <!-- To renders unlimited features, default is 10000 -->
 		<wms:DefaultLayerOptions>
 			<wms:MaxFeatures>-1</wms:MaxFeatures>
 		</wms:DefaultLayerOptions>
-    
-		<wms:ThemeId>SD_SpeciesDistribution</wms:ThemeId>
-		<wms:ThemeId>PS_ProtectedSite</wms:ThemeId>
-		<wms:ThemeId>HY_PhysicalWaters_Waterbodies</wms:ThemeId>
-		<wms:ThemeId>HB_Habitat</wms:ThemeId>
-		<wms:ThemeId>BR_Bio-geographicalRegions</wms:ThemeId>
+
+    <wms:ThemeId>BR_Bio-geographicalRegions</wms:ThemeId>
+    <wms:ThemeId>HB_Habitat</wms:ThemeId>		
+    <wms:ThemeId>HY_PhysicalWaters_Waterbodies</wms:ThemeId>		
+    <wms:ThemeId>PS_ProtectedSite</wms:ThemeId>
+		<wms:ThemeId>SD_SpeciesDistribution</wms:ThemeId>				
+    <wms:ThemeId>US_SewerNetwork</wms:ThemeId>
 	</wms:ServiceConfiguration>
 </wms:deegreeWMS>

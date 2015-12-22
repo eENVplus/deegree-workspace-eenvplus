@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FeatureLayers xmlns="http://www.deegree.org/layers/feature" xmlns:s="http://www.deegree.org/metadata/spatial" xmlns:l="http://www.deegree.org/layers/base" xmlns:d="http://www.deegree.org/metadata/description"   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.deegree.org/layers/feature http://schemas.deegree.org/layers/feature/3.2.0/feature.xsd" configVersion="3.2.0">
+
+  <FeatureStoreId>inspire_us_v4.0</FeatureStoreId>
+  
+  <FeatureLayer>
+    <l:Name>US.SewerNetwork.SewerPipe</l:Name>
+    <d:Title>Sewer Network - SewerPipe</d:Title>
+    <l:StyleRef>
+      <l:StyleStoreId>US_SewerNetwork_SewerPipe</l:StyleStoreId>
+    </l:StyleRef>
+  </FeatureLayer>
+  
+  <FeatureLayer>
+    <l:Name>US.SewerNetwork.Appurtenance</l:Name>
+    <d:Title>Sewer Network - Appurtenance</d:Title>
+    <l:StyleRef>
+      <l:StyleStoreId>US_SewerNetwork_Appurtenance</l:StyleStoreId>
+    </l:StyleRef>
+  </FeatureLayer>
+  
+</FeatureLayers>
