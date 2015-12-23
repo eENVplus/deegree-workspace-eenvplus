@@ -100,7 +100,7 @@ The configuration of each WFS can be found under the `web services > services` s
 
 ### WMS
 
-This workspace contains a WMS pre-configured with the supported INSPIRE Data Themes. It can be access at [[http://localhost:8080/deegree/services/us?service=WFS&request=GetCapabilities](http://localhost:8080/deegree/services/us?service=WFS&request=GetCapabilities)] and it provides the following layers:
+This workspace contains a WMS pre-configured with the supported INSPIRE Data Themes. It can be access at [[http://localhost:8080/deegree/services/wms?service=WMS&request=GetCapabilities](http://localhost:8080/deegree/services/us?service=WFS&request=GetCapabilities)] and it provides the following layers:
 
 1. `BR.Bio-geographicalRegion`
 2. `HB.Habitat`
