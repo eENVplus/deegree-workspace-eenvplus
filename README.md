@@ -108,7 +108,7 @@ This workspace contains a WMS pre-configured with the supported INSPIRE Data The
 5. `SD.SpeciesDistribution`
 6. `US.SewerNetwork`
 
-After downloading, activating this workspace and ingesting some example data, you can go to `General > see layers` section, which opens a simple map client that displays a base map 
+After downloading, activating this workspace and ingesting some example data, you can go to `General > see layers` section, which opens a simple map client that displays a base map. 
 
 ![Deegree base map](https://raw.githubusercontent.com/eENVplus/deegree-workspace-eenvplus/screenshots/console_map.png "Base Map")
 
