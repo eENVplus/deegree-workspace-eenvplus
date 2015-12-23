@@ -9,7 +9,7 @@ This workspace is an INSPIRE View and Download Services setup. It contains WFSs 
 
 In order to run deegree, you will need
 
-- Oracle Java 6 JDK, Update 4 or better. We recommend using the latest Java 6 version. Java 7 should also work, but is not as well tested.
+- Oracle Java 6 JDK, Update 4 or better. We recommend using the latest Java 6 version. Java 7 should also work, but has not been already tested.
 - PostgreSQL (8.3, 8.4 or 9.0) with PostGIS (1.4 or 1.5)
 
 Consult the [Deegree system requirements page](http://download.deegree.org/documentation/3.3.15/html/installation.html#system-requirements) for more information.
@@ -41,7 +41,7 @@ Name the workspace as "deegree-workspace-eenvplus" before importing it.
 
 ![Deegree upload workspace](https://raw.githubusercontent.com/eENVplus/deegree-workspace-eenvplus/screenshots/console_upload.png "Upload Workspace")
 
-After uploading has completed, the the workspace will be listed in section *Available workspaces*:
+After uploading has completed, the workspace will be listed in section *Available workspaces*:
 
 ![Deegree new workspace available](https://raw.githubusercontent.com/eENVplus/deegree-workspace-eenvplus/screenshots/console_workspace_available.png "New Workspace Available")
 
@@ -108,7 +108,7 @@ This workspace contains a WMS pre-configured with the supported INSPIRE Data The
 5. `SD.SpeciesDistribution`
 6. `US.SewerNetwork`
 
-After downloading, activating this workspace and ingesting some example data, you can go to `General > see layers` section, which opens a simple map client that displays a base map (not rendered by deegree, but loaded from the OpenStreetMap servers).
+After downloading, activating this workspace and ingesting some example data, you can go to `General > see layers` section, which opens a simple map client that displays a base map 
 
 ![Deegree base map](https://raw.githubusercontent.com/eENVplus/deegree-workspace-eenvplus/screenshots/console_map.png "Base Map")
 
