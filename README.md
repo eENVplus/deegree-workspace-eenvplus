@@ -66,7 +66,6 @@ The *eENVplus workspace* comes <u>pre-configured</u> with a SQL feature store fo
 
 ### Ingest data
 
-Here we explain how a GML file can be ingested to provide some data to the pre-configured WFSs and WMS.
 [Download from the latest version of the eENVplus workspace](https://github.com/eENVplus/deegree-workspace-eenvplus/releases) the file `gml.zip`. It contains a GML file for each of the supported INSPIRE Data Themes:
 
 1. *Bio-geographical Regions*
@@ -89,7 +88,7 @@ Here you can import a collection features from a GML file by providing its URL, 
 
 ### WFSs
 
-The configuration of each WFS can be found under the `web services > services` section. Instead, they are available at:
+The configuration of each WFS can be found under the `web services > services` section. They are available at:
 
 - [http://localhost:8080/deegree/services/br?service=WFS&request=GetCapabilities](http://localhost:8080/deegree/services/br?service=WFS&request=GetCapabilities)
 - [http://localhost:8080/deegree/services/hb?service=WFS&request=GetCapabilities](http://localhost:8080/deegree/services/hb?service=WFS&request=GetCapabilities)
