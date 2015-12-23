@@ -3,6 +3,12 @@ Configuration for eENVplus INSPIRE compliant services, using deegree WMS and WFS
 
 This workspace is an INSPIRE View and Download Services setup. It contains WFSs (2.0.0 and 1.1.0) configured for *Bio-geographical Regions*, *Habitats and Biotopes*, *Hydrography*, *Protected Sites*, *Species Distribution*, and *Utility and Government Services* Data Themes and a WMS (1.3.0 and 1.1.1) pre-configured with some layers from the eENVplus pilots.
 
+## Acknowledgement
+
+This workspace was created within the eENVplus project (http://www.eenvplus.eu) funded by European Union under the Competitiveness and Innovation Framework Programme – Information and Communication Technologies Policy Support Programme (CIP-ICT-PSP) grant No. 325232.
+
+The development was performed by [Fondazione GraphiTech](http://www.graphitech.it).
+
 ## Installation
 
 ### System Requirements
