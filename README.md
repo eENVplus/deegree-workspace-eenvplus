@@ -85,7 +85,7 @@ Look for the "inspire_sd" feature store and click its *Loader* button.
 
 ![Deegree import features](https://raw.githubusercontent.com/eENVplus/deegree-workspace-eenvplus/screenshots/console_import.png "Import GML feature")
 
-Here you can import a features from a GML file by providing its URL, e.g. "file:///home/user/Downloads/gml/sd.gml", and clicking on  the *Import* button.
+Here you can import a collection features from a GML file by providing its URL, e.g. "file:///home/user/Downloads/gml/sd.gml", and clicking on  the *Import* button.
 
 ### WFSs
 
@@ -100,7 +100,22 @@ The configuration of each WFS can be found under the `web services > services` s
 
 ### WMS
 
-tbd
+This workspace contains a WMS pre-configured with the supported INSPIRE Data Themes. It can be access at [[http://localhost:8080/deegree/services/us?service=WFS&request=GetCapabilities](http://localhost:8080/deegree/services/us?service=WFS&request=GetCapabilities)] and it provides the following layers:
+
+1. `BR.Bio-geographicalRegion`
+2. `HB.Habitat`
+3. `HY.PhysicalWaters.Waterbodies`
+4. `PS.ProtectedSite`
+5. `SD.SpeciesDistribution`
+6. `US.SewerNetwork`
+
+After downloading, activating this workspace and ingesting some example data, you can go to `General > see layers` section, which opens a simple map client that displays a base map (not rendered by deegree, but loaded from the OpenStreetMap servers).
+
+![Deegree base map](https://raw.githubusercontent.com/eENVplus/deegree-workspace-eenvplus/screenshots/console_map.png "Base Map")
+
+Click the `+` on the right to see a list of available layers. Tick the ones you want to see. They will be rendered by your deegree WMS instance.
+
+![Deegree renders layers](https://raw.githubusercontent.com/eENVplus/deegree-workspace-eenvplus/screenshots/console_layers.png "Example layers")
 
 ## Need help?
 
